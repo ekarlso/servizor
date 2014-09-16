@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = servizor
+omit = servizor/tests/*,servizor/openstack/*
+
+[report]
+ignore-errors = True
