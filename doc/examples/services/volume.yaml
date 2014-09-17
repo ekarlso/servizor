@@ -1,0 +1,14 @@
+
+- service:
+    name: cinder
+    type: volume
+    description: OpenStack Cinder Volume Service
+    parameters:
+      port: 8776
+    endpoints:
+      - interface: public
+        url: "{proto}://{public_addr}:{port}/v1/%(tenant_id)s"
+      - interface: admin
+        url: "{proto}://{int_addr}:{port}/v1/%(tenant_id)s"
+      - interface: admin
+        url: "{proto}://{admin_addr}:{port}/v1/%(tenant_id)s"

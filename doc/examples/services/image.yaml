@@ -1,0 +1,14 @@
+---
+- service:
+    name: glance
+    description: OpenStack Network Service
+    type: image
+    parameters:
+      port: 9292
+    endpoints:
+      - interface: public
+        url: "{proto}://{addr}:{port}"
+      - interface: internal
+        url: "{proto}://{addr}:{port}"
+      - interface: admin
+        url: "{proto}://{addr}:{port}"

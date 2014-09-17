@@ -1,0 +1,13 @@
+- service:
+    name: keystone
+    type: identity
+    description: OpenStack Identity Service
+    parameters:
+      port: 5000
+    endpoints:
+      - interface: public
+        url: "{proto}://{addr}:{port}/v2.0"
+      - interface: internal
+        url: "{proto}://{addr}:{port}/v2.0"
+      - interface: admin
+        url: "{proto}://{addr}:{port}/v2.0"

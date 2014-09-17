@@ -1,0 +1,21 @@
+---
+- env:
+    name: ssl
+    parameters:
+        # Default parameters
+        proto: https
+        addr: default-addr.lint.local
+
+        # Override for internal interface address
+        internal:
+            proto: http
+            addr: internal.lint.local
+
+        # Override We'll override the rating default port to 8080 but also
+        # change the defaeult addr to a diff then the default
+        rating:
+            port: 8080
+            public:
+                proto: https
+                port: 443
+                addr: public-ssl.lint.local

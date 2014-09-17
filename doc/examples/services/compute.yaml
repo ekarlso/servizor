@@ -1,0 +1,13 @@
+
+- service:
+    name: nova
+    type: compute
+    parameters:
+      port: 8774
+    description: OpenStack Compute Service
+      - interface: public
+        url: "{proto}://{addr}:{port}/v2/%(tenant_id)s"
+      - interface: internal
+        url: "{proto}://{addr}:{port}/v2/%(tenant_id)s"
+      - interface: admin
+        url: "{proto}://{addr}:{port}/v2/%(tenant_id)s"

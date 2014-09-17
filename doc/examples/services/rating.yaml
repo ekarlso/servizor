@@ -1,0 +1,13 @@
+- service:
+    name: cloudkitty
+    type: rating
+    description: Rating service
+    parameters:
+      port: 6379
+    endpoints:
+    - interface: public
+      url: '{proto}://{addr}:{port}'
+    - interface: internal
+      url: '{proto}://{addr}:{port}'
+    - interface: admin
+      url: '{proto}://{addr}:{port}'

@@ -1,0 +1,14 @@
+---
+- service:
+    name: ceilometer
+    type: telemetry
+    parameters:
+      port: 8777
+    description: OpenStack Telemetry Service
+    endpoints:
+      - interface: public
+        url: "{proto}://{addr}:{port}"
+      - interface: admin
+        url: "{proto}://{addr}:{port}"
+      - interface: admin
+        url: "{proto}://{addr}:{port}"

@@ -1,0 +1,32 @@
+- service:
+    name: nova
+    type: compute
+    description: OpenStack Compute Service
+    endpoints:
+      - interface: internal
+        url: 'http://{addr}:8774'
+
+# Endpoint defined here (Get's hooked up to compute.nova)
+- endpoints:
+    service:
+      type: compute
+      name: nova
+    entries:
+      - interface: public
+        url: 'http://{addr}:8774'
+        region: RegionOne
+
+# Endpoint define here (Creates also a service volume.cinder)
+- endpoints:
+    service:
+      type: volume
+      name: cinder
+    entries:
+      - interface: public
+        url: 'http://{addr}:8776'
+
+# Env used
+- env:
+    name: non-ssl
+    parameters:
+        addr: foo.com

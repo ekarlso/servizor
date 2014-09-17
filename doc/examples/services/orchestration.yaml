@@ -1,0 +1,14 @@
+---
+- service:
+    name: heat
+    type: orchestration
+    description: OpenStack Orchestration Service
+    parameters:
+      port: 8004
+    endpoints:
+      - interface: public
+        url: "{proto}://{addr}:{port}"
+      - interface: internal
+        url: "{proto}://{addr}:{port}"
+      - interface: admin
+        url: "{proto}://{addr}:{port}"

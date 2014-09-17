@@ -1,0 +1,14 @@
+---
+- service:
+    name: heat-cfn
+    type: Cloudformation
+    description: Cloudformation
+    parameters:
+      port: 8000
+    endpoints:
+      - interface: public
+        url: "{proto}://{addr}:{port}/v1"
+      - interface: internal
+        url: "{proto}://{addr}:{port}/v1"
+      - interface: admin
+        url: "{proto}://{addr}:{port}/v1"
