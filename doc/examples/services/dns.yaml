@@ -1,0 +1,14 @@
+---
+- service:
+    name: designate
+    type: dns
+    description: OpenStack DNS Service
+    parameters:
+      port: 9001
+    endpoints:
+      - interface: public
+        url: "{proto}://{addr}:{port}"
+      - interface: internal
+        url: "{proto}://{addr}:{port}"
+      - interface: admin
+        url: "{proto}://{addr}:{port}"
